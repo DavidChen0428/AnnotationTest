@@ -35,7 +35,7 @@ Annotation 是一種在程式碼中嵌入metadata的機制，它讓你能在類�
 
 ## 自定義Annotation如何建立
 1. 建立Annotation類
-'''java
+```java
 
 @Documented
 @Inherited
@@ -44,18 +44,18 @@ Annotation 是一種在程式碼中嵌入metadata的機制，它讓你能在類�
 @Retention()
 public @interface AnnotationName{
 } 
-'''
+```
 2. 如果需要驗證的話需自行建立驗證器
-'''java
+```java
 public class AnnotationValidator implements ConstraintValidator<AnnotationName, FieldType>{
   @Override
 	public boolean isValid(FieldType value, ConstraintValidatorContext context) {
 		return 驗證條件;
 	}
 }
-'''
-3. 使用在想要的地方上 Ex.
-'''
+```
+4. 使用在想要的地方上 Ex.
+```
 public class Student{
   private Integer id;
   private String name;
@@ -63,4 +63,4 @@ public class Student{
   private Integer age;
   
 }
-'''
+```
